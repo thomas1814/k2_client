@@ -50,11 +50,13 @@ int main(int argC,char **argV)
         mySocket.readData();        
         char *jsonCharArrayPtr;
         char *socketCharArrayPtr;
+        size_t readSkipSizeC = readSkipSize;
+        size_t stringSizeloC = stringSize;
         jsonCharArrayPtr = jsonCharArray;
         socketCharArrayPtr = mySocket.mBuffer;
-        iconv(charConverter,&socketCharArrayPtr,&readSkipSize,&jsonCharArrayPtr,&stringSize);
+        iconv(charConverter,&socketCharArrayPtr,&readSkipSizeC,&jsonCharArrayPtr,&stringSizeloC);
         double utcTime;
-        memcpy(&utcTime,&mySocket.mBuffer[readSkipSize],sizeof(double));
+        memcpy(&utcTime,&mySocket.mBuffer[readSkipSizeC],sizeof(double));
         std::string jsonString(jsonCharArray);
         Json::Value jsonObject;
         Json::Reader jsonReader;
