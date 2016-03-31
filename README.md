@@ -9,7 +9,7 @@ This software is meant to be run on the linux side of the system. The correspond
 Setting up the software
 =======================
 
-A) Download this k2_client package .zip file from GitHub (not the release, as this is not for catkin_make).
+A) Download this k2_client package .zip file (not the release, as this is not for catkin_make).
 
 B) Before you can use the k2_client package, you need to install libjsoncpp-dev. Use the following code snippet for it.
 
